@@ -122,12 +122,12 @@ const waitForEnter = require('./components/waitForEnter.js');
 
 
 
+
         ////////////////////////////////////////////////////////////////////////////
         console.log("QQQQQQQQQQQ");
         await waitForEnter();
         console.log("RRRRRRRRRRR");
         //Working on (2) Extrude 1(4.00)
-        ////////////////////////////////////////////////////////////////////////////
         const selector1 = 'div[data-id="Dg4JdGx6jlZTm4XD"]'; // Replace with the appropriate selector
         const title1 = '(1) Initial Sketch'; // Replace with the desired title
         console.log('Right-clicking on the specified element.');
@@ -155,14 +155,29 @@ const waitForEnter = require('./components/waitForEnter.js');
         await waitForEnter();
         console.log("DDDDDDDDDD");
         pasteIntoSketchFunction(editOptions20, newPage);
+        ////////////////////////////////////////////////////////////////////////////
 
         ///////WORKING, NEED TO CHANGE THE (3) Extrude Sketch(1.03)
         // const desiredIndex7 = 7;
         // await clickButtonByIndex(newPage, desiredIndex7);
-        console.log("GGGGGGGGGGGG");
+        console.log("Before searchAndClickTransform");
         await waitForEnter();
-        console.log("HHHHHHHHHH");
+        console.log("Before editIntoSketchFunction");
+        //editIntoSketchFunction(editOptions8, newPage);
+        const title21 = '(3) Extrude Sketch(1.03)'; // Replace with the desired title
+        const editOptions21 = await performRightClickOptionByTitle(newPage, selector7, title21);
+        editIntoSketchFunction(editOptions21, newPage);
         ////////////////////////////////////////////////////////////////////////////
+        console.log("After editIntoSketchFunction");
+        await waitForEnter();
+        console.log("Before searchAndClickTransform");
+        ////////WORKING CODE
+        await searchAndClickTransform(newPage);
+        console.log("After searchAndClickTransform");
+        await waitForEnter();
+        console.log("After searchAndClickTransform");
+
+
 
 
 
